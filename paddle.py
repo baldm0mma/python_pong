@@ -1,8 +1,7 @@
 from turtle import Turtle
 
-class Paddle(Turtle):
+class Paddle:
     def __init__(self, starting_x_position):
-        super().__init__()
         self.starting_x_position = starting_x_position
         self.paddle = self.create_paddle()
 
