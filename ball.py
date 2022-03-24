@@ -1,15 +1,19 @@
 from turtle import Turtle
 
+# CONSTANTS
+BALL_MOVEMENT = 5
 
-class Ball:
+class Ball(Turtle):
     def __init__(self):
-        self.ball = self.create_ball()
-
-    def create_ball(self):
-        ball = Turtle("circle")
-        ball.color("white")
-        ball.penup()
-        return ball
+      super().__init__()
+      self.shape("circle")
+      self.color("white")
+      self.penup()
+      self.x_move = BALL_MOVEMENT
+      self.y_move = BALL_MOVEMENT
 
     def move(self):
-        self.ball.goto(self.ball.xcor() + 5, self.ball.ycor() + 5)
+        self.goto(self.xcor() + self.x_move, self.ycor() + self.y_move)
+
+    def bounce(self):
+      self.y_move *= -1
