@@ -1,9 +1,5 @@
 from turtle import Turtle
 
-# CONSTANTS
-STARTING_PADDLE_LOCATION = {"x": 350, "y": 0}
-
-
 class Paddle(Turtle):
     def __init__(self, position):
         super().__init__()
