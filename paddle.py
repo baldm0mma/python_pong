@@ -1,9 +1,9 @@
 from turtle import Turtle
 
 class Paddle(Turtle):
-    def __init__(self, position):
+    def __init__(self, starting_x_position):
         super().__init__()
-        self.position = position
+        self.starting_x_position = starting_x_position
         self.paddle = self.create_paddle()
 
     def create_paddle(self):
@@ -11,10 +11,11 @@ class Paddle(Turtle):
         paddle.shapesize(stretch_wid=5, stretch_len=1)
         paddle.color("white")
         paddle.penup()
-        paddle_position = "-" if self.position == "left" else ""
-        paddle.goto(int(f"{paddle_position}350"), 0)
+        paddle.goto(self.starting_x_position, 0)
         return paddle
 
     def move_up(self):
+      self.paddle.goto(self.paddle.xcor(), self.paddle.ycor() + 20)
 
     def move_down(self):
+      self.paddle.goto(self.paddle.xcor(), self.paddle.ycor() - 20)
