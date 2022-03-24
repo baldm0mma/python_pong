@@ -12,4 +12,4 @@ class Ball:
         return ball
 
     def move(self):
-        self.ball.goto(self.ball.xcor() + 10, self.ball.ycor() + 10)
+        self.ball.goto(self.ball.xcor() + 5, self.ball.ycor() + 5)
