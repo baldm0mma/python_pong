@@ -7,6 +7,7 @@ import time
 # CONSTANTS
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
+STARTING_SLEEP_INTERVAL = 0.05
 
 screen = Screen()
 screen.bgcolor("black")
@@ -29,8 +30,10 @@ screen.onkey(left_paddle.move_down, "s")
 
 game_is_on = True
 
+sleep_interval = STARTING_SLEEP_INTERVAL
+
 while game_is_on:
-    time.sleep(0.05)
+    time.sleep(sleep_interval)
     screen.update()
     ball.move()
 
@@ -46,10 +49,12 @@ while game_is_on:
     if ball.xcor() > SCREEN_WIDTH / 2:
         ball.reset_ball()
         scoreboard.update_score("left")
+        sleep_interval /= 1.25
 
     # Detect left paddle miss
     if ball.xcor() < -(SCREEN_WIDTH / 2):
         ball.reset_ball()
         scoreboard.update_score("right")
+        sleep_interval /= 1.25
 
 screen.exitonclick()
