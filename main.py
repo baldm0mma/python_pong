@@ -36,7 +36,7 @@ while game_is_on:
         ball.bounce_y()
 
     # Dectect collision with paddles
-    if ball.distance(left_paddle) < 50 and ball.xcor() < -(SCREEN_HEIGHT / 2 - 20) or ball.distance(right_paddle) < 50 and ball.xcor() < SCREEN_HEIGHT / 2 - 20:
+    if ball.distance(left_paddle) < 50 and ball.xcor() < -(SCREEN_WIDTH / 2 - 75) or ball.distance(right_paddle) < 50 and ball.xcor() > SCREEN_WIDTH / 2 - 75:
         ball.bounce_x()
 
 screen.exitonclick()
